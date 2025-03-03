@@ -795,8 +795,8 @@ const KenKenPuzzle: React.FC<KenKenPuzzleProps> = ({
           </h1>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full max-w-2xl mx-auto px-8">
-        <div className={`kenken-grid size-${size} mb-8`}>
+      <div className="w-full max-w-2xl mx-auto">
+        <div className={`kenken-grid size-${size}`}>
           {Array.from({ length: size * size }).map((_, index) => {
             const rowIndex = Math.floor(index / size);
             const colIndex = index % size;
