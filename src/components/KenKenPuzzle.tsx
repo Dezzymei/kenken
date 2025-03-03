@@ -47,32 +47,32 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
     [
       {
         cells: [[0, 0], [0, 1]] as [number, number][],
-        target: 4,
+        target: 5,
         operation: '+'
       },
       {
-        cells: [[0, 2], [1, 2]] as [number, number][],
-        target: 4,
-        operation: '+'
-      },
-      {
-        cells: [[1, 0]] as [number, number][],
-        target: 2,
-        operation: ''
-      },
-      {
-        cells: [[1, 1]] as [number, number][],
+        cells: [[0, 2]] as [number, number][],
         target: 1,
         operation: ''
       },
       {
+        cells: [[1, 0]] as [number, number][],
+        target: 3,
+        operation: ''
+      },
+      {
+        cells: [[1, 1], [1, 2]] as [number, number][],
+        target: 3,
+        operation: '+'
+      },
+      {
         cells: [[2, 0], [2, 1]] as [number, number][],
-        target: 6,
-        operation: '×'
+        target: 2,
+        operation: '÷'
       },
       {
         cells: [[2, 2]] as [number, number][],
-        target: 3,
+        target: 2,
         operation: ''
       }
     ],
