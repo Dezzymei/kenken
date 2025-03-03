@@ -1,0 +1,8 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="8" fill="#4F46E5"/>
+  <path d="M8 8H24V24H8V8Z" stroke="white" stroke-width="2"/>
+  <path d="M16 8V24" stroke="white" stroke-width="2"/>
+  <path d="M8 16H24" stroke="white" stroke-width="2"/>
+  <text x="10" y="14" fill="white" font-family="Inter" font-size="8" font-weight="bold">2×</text>
+  <text x="18" y="22" fill="white" font-family="Inter" font-size="8" font-weight="bold">3+</text>
+</svg> 
