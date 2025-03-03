@@ -28,9 +28,9 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
         operation: '+'
       },
       {
-        cells: [[1, 1], [2, 1]] as [number, number][],
-        target: 3,
-        operation: '×'
+        cells: [[1, 1]] as [number, number][],
+        target: 1,
+        operation: ''
       },
       {
         cells: [[1, 2], [2, 2]] as [number, number][],
@@ -38,9 +38,9 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
         operation: '÷'
       },
       {
-        cells: [[2, 0]] as [number, number][],
-        target: 2,
-        operation: ''
+        cells: [[2, 0], [2, 1]] as [number, number][],
+        target: 6,
+        operation: '×'
       }
     ],
     // Puzzle 2 (3×3)
@@ -57,50 +57,70 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[1, 0]] as [number, number][],
-        target: 3,
+        target: 1,
         operation: ''
       },
       {
         cells: [[1, 1], [1, 2]] as [number, number][],
+        target: 6,
+        operation: '×'
+      },
+      {
+        cells: [[2, 0]] as [number, number][],
+        target: 3,
+        operation: ''
+      },
+      {
+        cells: [[2, 1], [2, 2]] as [number, number][],
         target: 3,
         operation: '+'
-      },
-      {
-        cells: [[2, 0], [2, 1]] as [number, number][],
-        target: 2,
-        operation: '÷'
-      },
-      {
-        cells: [[2, 2]] as [number, number][],
-        target: 2,
-        operation: ''
       }
     ],
     // Puzzle 3
     [
       {
-        cells: [[0, 0], [1, 0]] as [number, number][],
-        target: 6,
-        operation: '×'
-      },
-      {
-        cells: [[0, 1]] as [number, number][],
-        target: 1,
+        cells: [[0, 0]] as [number, number][],
+        target: 2,
         operation: ''
       },
       {
-        cells: [[0, 2], [1, 2]] as [number, number][],
-        target: 3,
-        operation: '-'
+        cells: [[0, 1], [0, 2]] as [number, number][],
+        target: 7,
+        operation: '+'
       },
       {
-        cells: [[1, 1], [2, 1]] as [number, number][],
+        cells: [[0, 3], [1, 3]] as [number, number][],
         target: 2,
         operation: '÷'
       },
       {
-        cells: [[2, 0], [2, 2]] as [number, number][],
-        target: 4,
+        cells: [[1, 0], [1, 1]] as [number, number][],
+        target: 3,
+        operation: '-'
+      },
+      {
+        cells: [[1, 2], [2, 2]] as [number, number][],
+        target: 6,
+        operation: '×'
+      },
+      {
+        cells: [[2, 0], [2, 1]] as [number, number][],
+        target: 7,
+        operation: '+'
+      },
+      {
+        cells: [[2, 3], [3, 3]] as [number, number][],
+        target: 2,
+        operation: '÷'
+      },
+      {
+        cells: [[3, 0]] as [number, number][],
+        target: 1,
+        operation: ''
+      },
+      {
+        cells: [[3, 1], [3, 2]] as [number, number][],
+        target: 5,
         operation: '+'
       }
     ],
@@ -108,55 +128,115 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
     [
       {
         cells: [[0, 0], [0, 1]] as [number, number][],
-        target: 3,
+        target: 5,
         operation: '+'
       },
       {
-        cells: [[0, 2]] as [number, number][],
-        target: 2,
+        cells: [[0, 2], [0, 3]] as [number, number][],
+        target: 6,
+        operation: '×'
+      },
+      {
+        cells: [[1, 0]] as [number, number][],
+        target: 3,
         operation: ''
       },
       {
-        cells: [[1, 0], [2, 0]] as [number, number][],
+        cells: [[1, 1], [2, 1]] as [number, number][],
         target: 2,
         operation: '÷'
       },
       {
-        cells: [[1, 1], [1, 2]] as [number, number][],
-        target: 4,
+        cells: [[1, 2], [1, 3]] as [number, number][],
+        target: 7,
         operation: '+'
       },
       {
-        cells: [[2, 1], [2, 2]] as [number, number][],
+        cells: [[2, 0], [2, 2]] as [number, number][],
         target: 3,
-        operation: '×'
+        operation: '-'
+      },
+      {
+        cells: [[2, 3], [3, 3]] as [number, number][],
+        target: 2,
+        operation: '÷'
+      },
+      {
+        cells: [[3, 0]] as [number, number][],
+        target: 2,
+        operation: ''
+      },
+      {
+        cells: [[3, 1], [3, 2]] as [number, number][],
+        target: 6,
+        operation: '+'
       }
     ],
     // Puzzle 5
     [
       {
-        cells: [[0, 0]] as [number, number][],
-        target: 3,
-        operation: ''
-      },
-      {
-        cells: [[0, 1], [0, 2]] as [number, number][],
-        target: 3,
+        cells: [[0, 0], [0, 1]] as [number, number][],
+        target: 7,
         operation: '+'
       },
       {
-        cells: [[1, 0], [2, 0]] as [number, number][],
+        cells: [[0, 2], [0, 3]] as [number, number][],
         target: 3,
-        operation: '÷'
+        operation: '-'
       },
       {
-        cells: [[1, 1], [1, 2]] as [number, number][],
+        cells: [[0, 4]] as [number, number][],
+        target: 1,
+        operation: ''
+      },
+      {
+        cells: [[1, 0], [2, 0]] as [number, number][],
         target: 2,
         operation: '÷'
       },
       {
+        cells: [[1, 1], [1, 2]] as [number, number][],
+        target: 8,
+        operation: '+'
+      },
+      {
+        cells: [[1, 3], [1, 4]] as [number, number][],
+        target: 3,
+        operation: '-'
+      },
+      {
         cells: [[2, 1], [2, 2]] as [number, number][],
         target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[2, 3], [2, 4]] as [number, number][],
+        target: 6,
+        operation: '×'
+      },
+      {
+        cells: [[3, 0], [3, 1]] as [number, number][],
+        target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[3, 2]] as [number, number][],
+        target: 4,
+        operation: ''
+      },
+      {
+        cells: [[3, 3], [3, 4]] as [number, number][],
+        target: 7,
+        operation: '+'
+      },
+      {
+        cells: [[4, 0], [4, 1]] as [number, number][],
+        target: 2,
+        operation: '-'
+      },
+      {
+        cells: [[4, 2], [4, 3], [4, 4]] as [number, number][],
+        target: 12,
         operation: '+'
       }
     ]
@@ -171,80 +251,135 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[0, 2], [0, 3]] as [number, number][],
-        target: 4,
-        operation: '×'
+        target: 7,
+        operation: '+'
       },
       {
         cells: [[1, 0]] as [number, number][],
-        target: 1,
+        target: 2,
         operation: ''
       },
       {
-        cells: [[1, 1], [1, 2], [2, 1]] as [number, number][],
-        target: 6,
+        cells: [[1, 1], [2, 1]] as [number, number][],
+        target: 7,
         operation: '×'
       },
       {
-        cells: [[1, 3], [2, 3]] as [number, number][],
-        target: 2,
-        operation: '÷'
+        cells: [[1, 2], [1, 3]] as [number, number][],
+        target: 7,
+        operation: '+'
       },
       {
-        cells: [[2, 0], [3, 0]] as [number, number][],
-        target: 3,
-        operation: '-'
+        cells: [[2, 0]] as [number, number][],
+        target: 4,
+        operation: ''
       },
       {
-        cells: [[2, 2], [3, 2], [3, 3]] as [number, number][],
+        cells: [[2, 2], [2, 3]] as [number, number][],
         target: 3,
         operation: '+'
       },
       {
-        cells: [[3, 1]] as [number, number][],
-        target: 4,
-        operation: ''
+        cells: [[3, 0], [3, 1]] as [number, number][],
+        target: 7,
+        operation: '+'
+      },
+      {
+        cells: [[3, 2], [3, 3]] as [number, number][],
+        target: 3,
+        operation: '+'
       }
     ],
     // Puzzle 2
     [
       {
-        cells: [[0, 0], [1, 0]] as [number, number][],
-        target: 7,
-        operation: '+'
-      },
-      {
-        cells: [[0, 1], [0, 2]] as [number, number][],
-        target: 3,
-        operation: '-'
-      },
-      {
-        cells: [[0, 3]] as [number, number][],
-        target: 4,
+        cells: [[0, 0]] as [number, number][],
+        target: 1,
         operation: ''
       },
       {
-        cells: [[1, 1], [2, 1]] as [number, number][],
+        cells: [[0, 1], [0, 2]] as [number, number][],
+        target: 10,
+        operation: '+'
+      },
+      {
+        cells: [[0, 3], [0, 4]] as [number, number][],
+        target: 8,
+        operation: '+'
+      },
+      {
+        cells: [[0, 5], [1, 5]] as [number, number][],
         target: 2,
         operation: '÷'
       },
       {
-        cells: [[1, 2], [1, 3]] as [number, number][],
-        target: 6,
-        operation: '×'
+        cells: [[1, 0], [1, 1]] as [number, number][],
+        target: 8,
+        operation: '+'
       },
       {
-        cells: [[2, 0], [3, 0]] as [number, number][],
-        target: 2,
+        cells: [[1, 2], [1, 3], [1, 4]] as [number, number][],
+        target: 9,
+        operation: '+'
+      },
+      {
+        cells: [[2, 0], [2, 1]] as [number, number][],
+        target: 3,
         operation: '÷'
       },
       {
         cells: [[2, 2], [2, 3]] as [number, number][],
-        target: 4,
+        target: 5,
         operation: '+'
       },
       {
-        cells: [[3, 1], [3, 2], [3, 3]] as [number, number][],
-        target: 6,
+        cells: [[2, 4], [2, 5]] as [number, number][],
+        target: 8,
+        operation: '+'
+      },
+      {
+        cells: [[3, 0], [3, 1]] as [number, number][],
+        target: 4,
+        operation: '×'
+      },
+      {
+        cells: [[3, 2], [3, 3]] as [number, number][],
+        target: 7,
+        operation: '+'
+      },
+      {
+        cells: [[3, 4], [3, 5]] as [number, number][],
+        target: 9,
+        operation: '+'
+      },
+      {
+        cells: [[4, 0], [4, 1]] as [number, number][],
+        target: 8,
+        operation: '+'
+      },
+      {
+        cells: [[4, 2], [4, 3]] as [number, number][],
+        target: 8,
+        operation: '+'
+      },
+      {
+        cells: [[4, 4], [4, 5]] as [number, number][],
+        target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[5, 0], [5, 1]] as [number, number][],
+        target: 8,
+        operation: '+'
+      },
+      {
+        cells: [[5, 2], [5, 3]] as [number, number][],
+        target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[5, 4], [5, 5]] as [number, number][],
+        target: 8,
         operation: '+'
       }
     ],
@@ -387,14 +522,19 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
     // Puzzle 1 (Original)
     [
       {
-        cells: [[0, 0], [0, 1]] as [number, number][],
-        target: 5,
+        cells: [[0, 0]] as [number, number][],
+        target: 2,
+        operation: ''
+      },
+      {
+        cells: [[0, 1], [0, 2]] as [number, number][],
+        target: 9,
         operation: '+'
       },
       {
-        cells: [[0, 2], [0, 3], [0, 4]] as [number, number][],
-        target: 12,
-        operation: '×'
+        cells: [[0, 3], [0, 4]] as [number, number][],
+        target: 2,
+        operation: '-'
       },
       {
         cells: [[1, 0], [2, 0]] as [number, number][],
@@ -403,38 +543,43 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[1, 1], [1, 2]] as [number, number][],
-        target: 3,
-        operation: '-'
+        target: 4,
+        operation: '+'
       },
       {
         cells: [[1, 3], [1, 4]] as [number, number][],
-        target: 3,
+        target: 6,
         operation: '+'
       },
       {
-        cells: [[2, 1], [2, 2], [2, 3]] as [number, number][],
-        target: 10,
-        operation: '×'
-      },
-      {
-        cells: [[2, 4], [3, 4]] as [number, number][],
-        target: 2,
-        operation: '÷'
-      },
-      {
-        cells: [[3, 0], [3, 1], [3, 2]] as [number, number][],
-        target: 9,
+        cells: [[2, 1], [2, 2]] as [number, number][],
+        target: 7,
         operation: '+'
       },
       {
-        cells: [[3, 3], [4, 3]] as [number, number][],
-        target: 4,
-        operation: '×'
+        cells: [[2, 3], [2, 4]] as [number, number][],
+        target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[3, 0]] as [number, number][],
+        target: 1,
+        operation: ''
+      },
+      {
+        cells: [[3, 1], [3, 2]] as [number, number][],
+        target: 6,
+        operation: '+'
+      },
+      {
+        cells: [[3, 3], [3, 4]] as [number, number][],
+        target: 8,
+        operation: '+'
       },
       {
         cells: [[4, 0], [4, 1]] as [number, number][],
-        target: 2,
-        operation: '÷'
+        target: 7,
+        operation: '+'
       },
       {
         cells: [[4, 2]] as [number, number][],
@@ -442,36 +587,41 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
         operation: ''
       },
       {
-        cells: [[4, 4]] as [number, number][],
-        target: 5,
-        operation: ''
+        cells: [[4, 3], [4, 4]] as [number, number][],
+        target: 7,
+        operation: '+'
       }
     ],
     // Puzzle 2
     [
       {
-        cells: [[0, 0], [1, 0]] as [number, number][],
-        target: 6,
-        operation: '×'
+        cells: [[0, 0]] as [number, number][],
+        target: 1,
+        operation: ''
       },
       {
         cells: [[0, 1], [0, 2]] as [number, number][],
-        target: 5,
+        target: 8,
         operation: '+'
       },
       {
         cells: [[0, 3], [0, 4]] as [number, number][],
-        target: 4,
+        target: 2,
         operation: '-'
       },
       {
-        cells: [[1, 1]] as [number, number][],
-        target: 5,
+        cells: [[1, 0], [1, 1]] as [number, number][],
+        target: 7,
+        operation: '+'
+      },
+      {
+        cells: [[1, 2]] as [number, number][],
+        target: 3,
         operation: ''
       },
       {
-        cells: [[1, 2], [1, 3], [1, 4]] as [number, number][],
-        target: 10,
+        cells: [[1, 3], [1, 4]] as [number, number][],
+        target: 8,
         operation: '+'
       },
       {
@@ -480,34 +630,44 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
         operation: '+'
       },
       {
-        cells: [[2, 2]] as [number, number][],
-        target: 2,
+        cells: [[2, 2], [2, 3]] as [number, number][],
+        target: 3,
+        operation: '+'
+      },
+      {
+        cells: [[2, 4]] as [number, number][],
+        target: 5,
         operation: ''
       },
       {
-        cells: [[2, 3], [2, 4]] as [number, number][],
+        cells: [[3, 0], [3, 1]] as [number, number][],
         target: 3,
         operation: '-'
       },
       {
-        cells: [[3, 0], [4, 0]] as [number, number][],
-        target: 2,
-        operation: '÷'
-      },
-      {
-        cells: [[3, 1], [3, 2], [3, 3]] as [number, number][],
-        target: 12,
-        operation: '×'
-      },
-      {
-        cells: [[3, 4], [4, 4]] as [number, number][],
-        target: 5,
+        cells: [[3, 2], [3, 3]] as [number, number][],
+        target: 7,
         operation: '+'
       },
       {
-        cells: [[4, 1], [4, 2], [4, 3]] as [number, number][],
+        cells: [[3, 4]] as [number, number][],
+        target: 1,
+        operation: ''
+      },
+      {
+        cells: [[4, 0], [4, 1]] as [number, number][],
         target: 6,
         operation: '+'
+      },
+      {
+        cells: [[4, 2]] as [number, number][],
+        target: 3,
+        operation: ''
+      },
+      {
+        cells: [[4, 3], [4, 4]] as [number, number][],
+        target: 4,
+        operation: '-'
       }
     ]
   ],
@@ -526,156 +686,166 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[0, 4], [0, 5]] as [number, number][],
-        target: 3,
-        operation: '-'
-      },
-      {
-        cells: [[1, 0]] as [number, number][],
         target: 2,
-        operation: ''
-      },
-      {
-        cells: [[1, 1], [1, 2], [2, 1]] as [number, number][],
-        target: 6,
-        operation: '×'
-      },
-      {
-        cells: [[1, 3], [1, 4], [1, 5]] as [number, number][],
-        target: 12,
-        operation: '×'
-      },
-      {
-        cells: [[2, 0], [3, 0]] as [number, number][],
-        target: 3,
         operation: '-'
       },
       {
-        cells: [[2, 2], [2, 3]] as [number, number][],
-        target: 5,
+        cells: [[1, 0], [2, 0]] as [number, number][],
+        target: 2,
+        operation: '÷'
+      },
+      {
+        cells: [[1, 1], [1, 2]] as [number, number][],
+        target: 4,
         operation: '+'
       },
       {
-        cells: [[2, 4], [2, 5]] as [number, number][],
-        target: 3,
-        operation: '÷'
+        cells: [[1, 3], [1, 4], [1, 5]] as [number, number][],
+        target: 15,
+        operation: '+'
       },
       {
-        cells: [[3, 1], [3, 2]] as [number, number][],
-        target: 2,
-        operation: '÷'
+        cells: [[2, 1], [2, 2]] as [number, number][],
+        target: 6,
+        operation: '+'
       },
       {
-        cells: [[3, 3], [3, 4], [3, 5]] as [number, number][],
+        cells: [[2, 3], [2, 4]] as [number, number][],
         target: 8,
         operation: '+'
       },
       {
-        cells: [[4, 0], [4, 1], [5, 0]] as [number, number][],
+        cells: [[2, 5], [3, 5]] as [number, number][],
         target: 7,
         operation: '+'
       },
       {
-        cells: [[4, 2], [4, 3]] as [number, number][],
-        target: 3,
-        operation: '÷'
-      },
-      {
-        cells: [[4, 4], [4, 5]] as [number, number][],
-        target: 2,
-        operation: '-'
-      },
-      {
-        cells: [[5, 1], [5, 2]] as [number, number][],
-        target: 3,
-        operation: '×'
-      },
-      {
-        cells: [[5, 3], [5, 4], [5, 5]] as [number, number][],
+        cells: [[3, 0], [3, 1], [3, 2]] as [number, number][],
         target: 6,
+        operation: '+'
+      },
+      {
+        cells: [[3, 3], [3, 4]] as [number, number][],
+        target: 11,
+        operation: '+'
+      },
+      {
+        cells: [[4, 0]] as [number, number][],
+        target: 3,
+        operation: ''
+      },
+      {
+        cells: [[4, 1], [4, 2]] as [number, number][],
+        target: 7,
+        operation: '+'
+      },
+      {
+        cells: [[4, 3], [4, 4], [4, 5]] as [number, number][],
+        target: 11,
+        operation: '+'
+      },
+      {
+        cells: [[5, 0], [5, 1]] as [number, number][],
+        target: 10,
+        operation: '+'
+      },
+      {
+        cells: [[5, 2], [5, 3], [5, 4], [5, 5]] as [number, number][],
+        target: 12,
         operation: '+'
       }
     ],
     // Puzzle 2
     [
       {
-        cells: [[0, 0], [0, 1], [1, 0]] as [number, number][],
-        target: 11,
+        cells: [[0, 0], [0, 1]] as [number, number][],
+        target: 5,
         operation: '+'
       },
       {
         cells: [[0, 2], [0, 3]] as [number, number][],
+        target: 3,
+        operation: '-'
+      },
+      {
+        cells: [[0, 4], [0, 5]] as [number, number][],
         target: 2,
         operation: '÷'
       },
       {
-        cells: [[0, 4], [0, 5]] as [number, number][],
-        target: 4,
-        operation: '-'
-      },
-      {
-        cells: [[1, 1], [1, 2]] as [number, number][],
+        cells: [[1, 0], [1, 1]] as [number, number][],
         target: 7,
         operation: '+'
       },
       {
-        cells: [[1, 3], [1, 4], [1, 5]] as [number, number][],
+        cells: [[1, 2], [1, 3]] as [number, number][],
+        target: 11,
+        operation: '+'
+      },
+      {
+        cells: [[1, 4], [1, 5]] as [number, number][],
+        target: 3,
+        operation: '-'
+      },
+      {
+        cells: [[2, 0], [2, 1]] as [number, number][],
         target: 9,
         operation: '+'
       },
       {
-        cells: [[2, 0], [2, 1]] as [number, number][],
-        target: 8,
-        operation: '×'
-      },
-      {
         cells: [[2, 2], [2, 3]] as [number, number][],
-        target: 3,
-        operation: '-'
-      },
-      {
-        cells: [[2, 4], [2, 5]] as [number, number][],
-        target: 2,
-        operation: '÷'
-      },
-      {
-        cells: [[3, 0], [3, 1]] as [number, number][],
-        target: 5,
+        target: 8,
         operation: '+'
       },
       {
-        cells: [[3, 2], [4, 2]] as [number, number][],
+        cells: [[2, 4], [2, 5]] as [number, number][],
         target: 4,
         operation: '×'
       },
       {
-        cells: [[3, 3], [3, 4], [3, 5]] as [number, number][],
-        target: 10,
-        operation: '+'
+        cells: [[3, 0], [3, 1]] as [number, number][],
+        target: 2,
+        operation: '÷'
       },
       {
-        cells: [[4, 0], [4, 1]] as [number, number][],
-        target: 3,
-        operation: '-'
-      },
-      {
-        cells: [[4, 3]] as [number, number][],
-        target: 6,
-        operation: ''
-      },
-      {
-        cells: [[4, 4], [4, 5], [5, 4]] as [number, number][],
+        cells: [[3, 2], [3, 3]] as [number, number][],
         target: 7,
         operation: '+'
       },
       {
-        cells: [[5, 0], [5, 1], [5, 2]] as [number, number][],
+        cells: [[3, 4], [3, 5]] as [number, number][],
+        target: 3,
+        operation: '-'
+      },
+      {
+        cells: [[4, 0], [4, 1]] as [number, number][],
+        target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[4, 2], [4, 3]] as [number, number][],
+        target: 2,
+        operation: '÷'
+      },
+      {
+        cells: [[4, 4], [4, 5]] as [number, number][],
+        target: 5,
+        operation: '+'
+      },
+      {
+        cells: [[5, 0], [5, 1]] as [number, number][],
         target: 6,
         operation: '+'
       },
       {
-        cells: [[5, 3], [5, 5]] as [number, number][],
-        target: 5,
-        operation: '+'
+        cells: [[5, 2], [5, 3]] as [number, number][],
+        target: 1,
+        operation: '-'
+      },
+      {
+        cells: [[5, 4], [5, 5]] as [number, number][],
+        target: 2,
+        operation: '÷'
       }
     ]
   ]

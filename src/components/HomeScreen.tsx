@@ -32,10 +32,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onSizeSelect, completedPuzzles 
         initialLevels.push({
           size,
           index: i,
-          unlocked: i === 0 ? (
-            size === 3 || // First 3x3 is always unlocked
-            completedPuzzles.has(`${size-1}-${puzzleCount-1}`) // Last puzzle of previous size completed
-          ) : completedPuzzles.has(`${size}-${i-1}`) // Previous puzzle of same size completed
+          unlocked: i === 0 || // First puzzle is always unlocked
+            (i > 0 && completedPuzzles.has(`${size}-${i-1}`)) // Other puzzles require previous completion
         });
       }
     });
