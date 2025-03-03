@@ -52,7 +52,7 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[0, 2], [1, 2]] as [number, number][],
-        target: 5,
+        target: 4,
         operation: '+'
       },
       {
@@ -62,7 +62,7 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[1, 1]] as [number, number][],
-        target: 3,
+        target: 1,
         operation: ''
       },
       {
@@ -72,7 +72,7 @@ const puzzleConfigurations: Record<number, Cage[][]> = {
       },
       {
         cells: [[2, 2]] as [number, number][],
-        target: 1,
+        target: 3,
         operation: ''
       }
     ],
@@ -795,51 +795,49 @@ const KenKenPuzzle: React.FC<KenKenPuzzleProps> = ({
           </h1>
         </div>
       </div>
-      <div className="w-full max-w-2xl mx-auto">
-        <div className={`kenken-grid size-${size}`}>
-          {Array.from({ length: size * size }).map((_, index) => {
-            const rowIndex = Math.floor(index / size);
-            const colIndex = index % size;
-            const cell = grid[rowIndex][colIndex];
-            
-            const cage = cages.find(c => 
-              c.cells.some(([r, c]) => r === rowIndex && c === colIndex)
-            );
-            const isFirstInCage = cage && 
-              cage.cells[0][0] === rowIndex && 
-              cage.cells[0][1] === colIndex;
+      <div className={`kenken-grid size-${size}`}>
+        {Array.from({ length: size * size }).map((_, index) => {
+          const rowIndex = Math.floor(index / size);
+          const colIndex = index % size;
+          const cell = grid[rowIndex][colIndex];
+          
+          const cage = cages.find(c => 
+            c.cells.some(([r, c]) => r === rowIndex && c === colIndex)
+          );
+          const isFirstInCage = cage && 
+            cage.cells[0][0] === rowIndex && 
+            cage.cells[0][1] === colIndex;
 
-            const cellClasses = [
-              'kenken-cell',
-              shouldHaveRightBorder(rowIndex, colIndex) ? 'cage-border-right' : '',
-              shouldHaveBottomBorder(rowIndex, colIndex) ? 'cage-border-bottom' : '',
-            ].filter(Boolean).join(' ');
+          const cellClasses = [
+            'kenken-cell',
+            shouldHaveRightBorder(rowIndex, colIndex) ? 'cage-border-right' : '',
+            shouldHaveBottomBorder(rowIndex, colIndex) ? 'cage-border-bottom' : '',
+          ].filter(Boolean).join(' ');
 
-            return (
-              <div key={`${rowIndex}-${colIndex}`} className={cellClasses}>
-                {isFirstInCage && (
-                  <div className="kenken-cage-label">
-                    {cage.target}{cage.cells.length === 1 ? '' : cage.operation}
-                  </div>
-                )}
-                <input
-                  type="number"
-                  min="1"
-                  max={size}
-                  value={cell || ''}
-                  onChange={(e) => handleCellChange(rowIndex, colIndex, e.target.value)}
-                  className="kenken-input"
-                />
-              </div>
-            );
-          })}
-        </div>
-        {showCompletion && (
-          <div className="completion-message">
-            🎉 Congratulations! You've solved the puzzle!
-          </div>
-        )}
+          return (
+            <div key={`${rowIndex}-${colIndex}`} className={cellClasses}>
+              {isFirstInCage && (
+                <div className="kenken-cage-label">
+                  {cage.target}{cage.cells.length === 1 ? '' : cage.operation}
+                </div>
+              )}
+              <input
+                type="number"
+                min="1"
+                max={size}
+                value={cell || ''}
+                onChange={(e) => handleCellChange(rowIndex, colIndex, e.target.value)}
+                className="kenken-input"
+              />
+            </div>
+          );
+        })}
       </div>
+      {showCompletion && (
+        <div className="completion-message">
+          🎉 Congratulations! You've solved the puzzle!
+        </div>
+      )}
     </div>
   );
 };
