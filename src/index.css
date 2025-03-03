@@ -19,13 +19,11 @@ body {
 }
 
 .kenken-grid {
-  display: grid;
-  border: var(--border-thick) solid #1a1a1a;
-  width: fit-content;
+  @apply grid gap-0 relative;
+  border: var(--border-thick) solid #000000;
   background: white;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  border-radius: 2px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  width: fit-content;
 }
 
 .kenken-grid.size-3 { 
@@ -108,10 +106,10 @@ body {
 
 /* Container styles */
 .puzzle-container {
-  @apply flex flex-col items-center p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl;
-  max-width: 800px;
+  @apply flex flex-col items-center p-12 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl;
+  max-width: 900px;
   width: 100%;
-  margin: 0 auto;
+  margin: 2rem auto;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
