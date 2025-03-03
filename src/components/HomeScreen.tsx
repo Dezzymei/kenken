@@ -196,7 +196,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onSizeSelect, completedPuzzles 
       <div className="flex flex-col items-center justify-center w-full max-w-6xl mx-auto px-8 py-12">
         <div className="cyber-header mb-16">
           <div className="cyber-logo">
-            <img src="/kenken.svg" alt="KenKen Logo" className="w-32 h-32 animate-pulse mx-auto" />
+            <img src="/kenken/kenken.svg" alt="KenKen Logo" className="w-32 h-32 animate-pulse mx-auto" />
             <div className="cyber-glitch" data-text="KenKen">KenKen</div>
           </div>
           <div className="cyber-subtitle">NEURAL NETWORK PUZZLE v2.0</div>
